@@ -193,12 +193,16 @@
             </div>
 
             <div class="translate">
-                <textarea name="content" cols="40" rows="2" style="float:left" >변환값 여기로</textarea>
-                <input type = "button" class = "btn btn-secondary" value="Translate"/>
-                <input type = "button" class = "btn btn-secondary" value="소리"/>
-                <input type = "button" class = "btn btn-secondary" value="변환"/>
-
+                <div class = "t_area">
+                    <textarea name="content" cols="45" rows="2" style="float:left" >변환값 여기로</textarea>
+                    <input type = "image" src = "{% static 'transform.png' %}" class = "transform-button" />
+                </div>
+                <div class = "mybtn">                
+                    <input type = "button" class = "btn btn-secondary" value="Translate"/>
+                    <input type = "button" class = "btn btn-secondary" value="Sounds"/>
+                </div>
             </div>
+
         </div>
 
         <div class="footer">
@@ -211,6 +215,7 @@
 
 <style>
 
+
 #wrapper{
     max-width:480px;
     margin: 0 auto;
@@ -222,12 +227,25 @@
     float: left;
 }
 
+.mybtn{
+    width: 380px;
+}
+
+
 .textbox{
     display: inline-block;
 }
 
 .translate{
     padding-top: 10px;
+}
+
+input.transform-button{
+    margin: 5px;
+    border: none;
+    width: 42px;
+    height: 42px;
+    cursor:pointer;
 }
 
 .btn btn-secondary{
