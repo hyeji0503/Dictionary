@@ -16,3 +16,6 @@ def tts(request):
         print("%s.mp3" % os.path.join('./TTS/', "gtts"))
         return redirect('tts')
     return render(request, 'tts.html')
+
+def test(request):
+    return render(request, 'test.html')
