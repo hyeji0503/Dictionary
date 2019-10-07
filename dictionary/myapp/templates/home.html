@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="web.css" />
         <link rel="stylesheet" media="(max-width:480px)" href="mobile.css" />
     </head>
-    
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script>
             function allowDrop(ev) {
                 ev.preventDefault();
@@ -21,12 +21,12 @@
             function drop(ev) {
                 //ev.preventDefault();
                 var data = ev.dataTransfer.getData("text");
-                ev.target.before(document.getElementById(data));
+                ev.target.append(document.getElementById(data));
                 numbers[count] = Number(data);
                 count ++;
             
                 if(count==3){    //테스트용
-                $('p').text((numbers[0]*588)+(numbers[1]*28)+(numbers[2])+44032);
+                $('p').text(String.fromCharCode((numbers[0]*588)+(numbers[1]*28)+(numbers[2])+44032));
                 }
             }
             
@@ -42,11 +42,11 @@
 
             <div id = "carousel" style="clear:both">
                     <div class="slide">
-                        <img id="1_0" src = "{% static '1_0.png' %}">
+                        <img id="1" draggable="true" ondragstart="drag(event)" src = "{% static '1_0.png' %}">
                     </div>
     
                     <div class="slide">
-                        <img id="1_2" src = "{% static '1_2.png' %}">
+                        <img id="2" draggable="true" ondragstart="drag(event)" src = "{% static '1_2.png' %}">
                     </div>
     
                     <div class="slide">
@@ -101,19 +101,19 @@
 
 
             <div class="middle" style="width:100%">
-                <div class="textbox" style = "border:1px solid; height:300px; width:70%; "></div>
+                <div class="textbox"  ondrop="drop(event)" ondragover="allowDrop(event)" style = "border:1px solid; height:300px; width:70%; "></div>
                 
                 <div id = "carousel2" style="clear:both; height:300px;">
                         <div class="slide">
-                            <img id="2_0" src = "{% static '2_0.png' %}">
+                            <img id="0" draggable="true" ondragstart="drag(event)" src = "{% static '2_0.png' %}">
                         </div>
         
                         <div class="slide">
-                            <img id="2_1" src = "{% static '2_1.png' %}">
+                            <img id="1" draggable="true" ondragstart="drag(event)" src = "{% static '2_1.png' %}">
                         </div>
         
                         <div class="slide">
-                            <img id="2_2" src = "{% static '2_2.png' %}">
+                            <img id="2" src = "{% static '2_2.png' %}">
                         </div>
         
                         <div class="slide">
@@ -159,11 +159,11 @@
 
             <div id = "carousel" style="clear:both">
                 <div class="slide">
-                    <img id="3_1" src = "{% static '3_1.png' %}">
+                    <img id="1" draggable="true" ondragstart="drag(event)" src = "{% static '3_1.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="3_4" src = "{% static '3_4.png' %}">
+                    <img id="4" draggable="true" ondragstart="drag(event)" src = "{% static '3_4.png' %}">
                 </div>
 
                 <div class="slide">
@@ -216,7 +216,8 @@
             </div>
 
             <div class="translate">
-                <textarea name="content" cols="40" rows="2" style="float:left" >변환값 여기로</textarea>
+                <textarea name="content" cols="40" rows="2" style="float:left" ></textarea>
+                <p>변환값 여기로</p>
                 <input type = "button" class = "btn btn-secondary" value="Translate"/>
                 <input type = "button" class = "btn btn-secondary" value="소리"/>
                 <input type = "button" class = "btn btn-secondary" value="변환"/>
