@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="web.css" />
+        <link rel="stylesheet" media="(max-width:480px)" href="mobile.css" />
+    </head>
+
+    <body>
+    <div id = "wrapper">
+
+        <div class="header">
+            <h3> </h3>
+        </div>
+
+        <div class = "main">
+            <div class = "consonant">
+                <img src = "{% static '001.png' %}">
+                <img src = "{% static '002.png' %}">
+                <img src = "{% static '003.png' %}">
+                <img src = "{% static '004.png' %}">
+                <img src = "{% static '005.png' %}">
+                <img src = "{% static '006.png' %}">
+                <img src = "{% static '007.png' %}">
+                <img src = "{% static '008.png' %}">
+                <img src = "{% static '009.png' %}">
+                <img src = "{% static '010.png' %}">
+                <img src = "{% static '011.png' %}">
+                <img src = "{% static '012.png' %}">
+                <img src = "{% static '013.png' %}">
+                <img src = "{% static '014.png' %}">
+            </div>
+
+            <div class="middle" style="width:400px">
+                <div class="textbox" style = "border:1px solid; float:left; height:300px; width:85%;">
+
+                </div>
+                <input type = "button" class = "btn btn-secondary" value="소리"/>
+                <input type = "button" class = "btn btn-secondary" value="변환"/>
+            </div>
+            <br>
+
+            <div class="vowel" style="clear:both">
+                <img src = "{% static '001.png' %}">
+                <img src = "{% static '002.png' %}">
+                <img src = "{% static '003.png' %}">
+                <img src = "{% static '004.png' %}">
+                <img src = "{% static '005.png' %}">
+                <img src = "{% static '006.png' %}">
+            </div>
+
+            <div class="translate">
+                <textarea name="content" cols="40" rows="2" style="float:left" >변환값 여기로</textarea>
+                <input type = "button" class = "btn btn-secondary" value="Translate"/>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3></h3>
+        </div>
+    
+    </div> 
+    </body>
+</html>
+
+<style>
+
+#wrapper{
+    max-width:480px;
+    margin: 0 auto;
+}
+
+.middle{
+    margin-top: 20px;
+    
+}
+.vowel{
+    margin-top:20px;
+}
+.translate{
+    padding-top: 10px;
+}
+
+.btn btn-secondary{
+    vertical-align:middle; 
+}
+</style>
