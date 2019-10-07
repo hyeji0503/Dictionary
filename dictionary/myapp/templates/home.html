@@ -77,70 +77,126 @@
                 </div>
 
 
-            <div class="middle" style="width:400px">
-                <div class="textbox" style = "border:1px solid; float:left; height:300px; width:85%;">
+            <div class="middle" style="width:100%">
+                <div class="textbox" style = "border:1px solid; height:300px; width:70%; "></div>
+                
+                <div id = "carousel2" style="clear:both; height:300px;">
+                        <div class="slide">
+                            <img id="2_0" src = "{% static '2_0.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_1" src = "{% static '2_1.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_2" src = "{% static '2_2.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_3" src = "{% static '2_3.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_4" src = "{% static '2_4.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_5" src = "{% static '2_5.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_6" src = "{% static '2_6.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_7" src = "{% static '2_7.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_8" src = "{% static '2_8.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_9" src = "{% static '2_9.png' %}">
+                        </div>
+        
+                        <div class="slide">
+                            <img id="2_10" src = "{% static '2_10.png' %}">
+                        </div>
+                        
+                        <div class="slide">
+                            <img id="2_11" src = "{% static '2_11.png' %}">
+                        </div>
+        
+                    </div>
 
-                </div>
-                <input type = "button" class = "btn btn-secondary" value="소리"/>
-                <input type = "button" class = "btn btn-secondary" value="변환"/>
             </div>
             <br>
 
             <div id = "carousel" style="clear:both">
                 <div class="slide">
-                    <img id="2_0" src = "{% static '2_0.png' %}">
+                    <img id="3_1" src = "{% static '3_1.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_1" src = "{% static '2_1.png' %}">
+                    <img id="3_4" src = "{% static '3_4.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_2" src = "{% static '2_2.png' %}">
+                    <img id="3_7" src = "{% static '3_7.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_3" src = "{% static '2_3.png' %}">
+                    <img id="3_8" src = "{% static '3_8.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_4" src = "{% static '2_4.png' %}">
+                    <img id="3_16" src = "{% static '3_16.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_5" src = "{% static '2_5.png' %}">
+                    <img id="3_17" src = "{% static '3_17.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_6" src = "{% static '2_6.png' %}">
+                    <img id="3_19" src = "{% static '3_19.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_7" src = "{% static '2_7.png' %}">
+                    <img id="3_21" src = "{% static '3_21.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_8" src = "{% static '2_8.png' %}">
+                    <img id="3_22" src = "{% static '3_22.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_9" src = "{% static '2_9.png' %}">
+                    <img id="3_23" src = "{% static '3_23.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="2_10" src = "{% static '2_10.png' %}">
+                    <img id="3_24" src = "{% static '3_24.png' %}">
                 </div>
                 
                 <div class="slide">
-                    <img id="2_11" src = "{% static '2_11.png' %}">
+                    <img id="3_25" src = "{% static '3_25.png' %}">
                 </div>
 
+                <div class="slide">
+                    <img id="3_26" src = "{% static '3_26.png' %}">
+                </div>
 
+                <div class="slide">
+                    <img id="3_27" src = "{% static '3_27.png' %}">
+                </div>
             </div>
 
             <div class="translate">
                 <textarea name="content" cols="40" rows="2" style="float:left" >변환값 여기로</textarea>
                 <input type = "button" class = "btn btn-secondary" value="Translate"/>
+                <input type = "button" class = "btn btn-secondary" value="소리"/>
+                <input type = "button" class = "btn btn-secondary" value="변환"/>
 
             </div>
         </div>
@@ -162,7 +218,12 @@
 
 .middle{
     margin-top: 20px;
-    
+    height: 320px;
+    float: left;
+}
+
+.textbox{
+    display: inline-block;
 }
 
 .translate{
@@ -174,8 +235,15 @@
 }
 
 #carousel {
-    width: 100%;
-    height: 150px;
+    width: 80%;
+    height: 35px;
+    overflow: auto;
+}
+
+#carousel2 {
+    display: inline-block;
+    width: 15%;
+    height: 300px;
     overflow: auto;
 }
 
