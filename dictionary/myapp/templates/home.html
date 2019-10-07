@@ -7,7 +7,30 @@
         <link rel="stylesheet" href="web.css" />
         <link rel="stylesheet" media="(max-width:480px)" href="mobile.css" />
     </head>
-
+    
+    <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+            
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+            var numbers = new Array();
+            var count=0;
+            function drop(ev) {
+                //ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.before(document.getElementById(data));
+                numbers[count] = Number(data);
+                count ++;
+            
+                if(count==3){    //테스트용
+                $('p').text((numbers[0]*588)+(numbers[1]*28)+(numbers[2])+44032);
+                }
+            }
+            
+            </script>
     <body>
     <div id = "wrapper">
 
@@ -152,7 +175,6 @@
     </div> 
     </body>
 </html>
-
 <style>
 
 #wrapper{
