@@ -6,16 +6,14 @@ from gtts import gTTS
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
 
-def tts(request):
-    if request.method == "POST":
-        text = request.POST.get('text')
-        gtts = gTTS(text = text, lang='ko')
-        gtts.save("%s.mp3" % os.path.join('./TTS/', "gtts"))
-        print("%s.mp3" % os.path.join('./TTS/', "gtts"))
-        return redirect('tts')
-    return render(request, 'tts.html')
+    tts_content = request.GET.get('tts_content', '')
+    if tts_content:
+        gtts2 = gTTS(text=tts_content, lang = 'ko')
+        gtts2.save("%s.mp3" % os.path.join('./TTS2/', "gtts2"))
+        print("%s.mp3" % os.path.join('./TTS2/', "gtts2"))
+        
+    return render(request, 'home.html')
 
 def test(request):
     return render(request, 'test.html')
