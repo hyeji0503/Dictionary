@@ -40,3 +40,4 @@ whitenoise==4.1.4
 win-inet-pton==1.1.0
 wincertstore==0.2
 wrapt==1.11.2
+psycopg2==2.6.2
