@@ -37,18 +37,11 @@
                 ev.dataTransfer.setData("text", ev.target.id);
              
             }
-            function startDrag(e){
-                
-                var code = e.dataTransfer.getData('text');
-                e.dataTransfer.setData('Text',code);
-            }
-            function dropped(e){
-                e.preventDefault();
-                leftbox.innerHTML = e.dataTransfer.getData('Text');
-            }
+            
+           
            
             function click_transform() {
-               letter[lettercount]=(numbers[0]*588)+((numbers[1]-100)*28)+(numbers[2]-1000)+44032;
+               letter[lettercount]=(numbers[0]*588)+((numbers[1]-100)*28)+(numbers[2])+44032;
                document.getElementById('result').innerHTML+=(String.fromCharCode(letter[lettercount]));
                lettercount++;
                $('.textbox img').remove();
@@ -65,7 +58,7 @@
             });
             
             function drop(ev) {
-                //ev.preventDefault();
+                ev.preventDefault();
                 var data = ev.dataTransfer.getData("text");
                /* ev.stopPropagation();
                 ev.preventDefault();
@@ -252,59 +245,59 @@
 
             <div id = "carousel" style="clear:both">
                 <div class="slide">
-                    <img id="1001" draggable="true" ondragstart="drag(event)" src = "{% static '3_1.png' %}">
+                    <img id="1" draggable="true" ondragstart="drag(event)" src = "{% static '3_1.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1004" draggable="true" ondragstart="drag(event)" src = "{% static '3_4.png' %}">
+                    <img id="4" draggable="true" ondragstart="drag(event)" src = "{% static '3_4.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1007" draggable="true" ondragstart="drag(event)" src = "{% static '3_7.png' %}">
+                    <img id="7" draggable="true" ondragstart="drag(event)" src = "{% static '3_7.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1008" draggable="true" ondragstart="drag(event)" src = "{% static '3_8.png' %}">
+                    <img id="8" draggable="true" ondragstart="drag(event)" src = "{% static '3_8.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1016" draggable="true" ondragstart="drag(event)" src = "{% static '3_16.png' %}">
+                    <img id="16" draggable="true" ondragstart="drag(event)" src = "{% static '3_16.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1017" draggable="true" ondragstart="drag(event)" src = "{% static '3_17.png' %}">
+                    <img id="17" draggable="true" ondragstart="drag(event)" src = "{% static '3_17.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1019" draggable="true" ondragstart="drag(event)" src = "{% static '3_19.png' %}">
+                    <img id="19" draggable="true" ondragstart="drag(event)" src = "{% static '3_19.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1021" draggable="true" ondragstart="drag(event)" src = "{% static '3_21.png' %}">
+                    <img id="21" draggable="true" ondragstart="drag(event)" src = "{% static '3_21.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1022" draggable="true" ondragstart="drag(event)" src = "{% static '3_22.png' %}">
+                    <img id="22" draggable="true" ondragstart="drag(event)" src = "{% static '3_22.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1023" draggable="true" ondragstart="drag(event)" src = "{% static '3_23.png' %}">
+                    <img id="23" draggable="true" ondragstart="drag(event)" src = "{% static '3_23.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1024" draggable="true" ondragstart="drag(event)" src = "{% static '3_24.png' %}">
+                    <img id="24" draggable="true" ondragstart="drag(event)" src = "{% static '3_24.png' %}">
                 </div>
                 
                 <div class="slide">
-                    <img id="1025" draggable="true" ondragstart="drag(event)" src = "{% static '3_25.png' %}">
+                    <img id="25" draggable="true" ondragstart="drag(event)" src = "{% static '3_25.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1026" draggable="true" ondragstart="drag(event)" src = "{% static '3_26.png' %}">
+                    <img id="26" draggable="true" ondragstart="drag(event)" src = "{% static '3_26.png' %}">
                 </div>
 
                 <div class="slide">
-                    <img id="1027" draggable="true" ondragstart="drag(event)" src = "{% static '3_27.png' %}">
+                    <img id="27" draggable="true" ondragstart="drag(event)" src = "{% static '3_27.png' %}">
                 </div>
             </div>
             
