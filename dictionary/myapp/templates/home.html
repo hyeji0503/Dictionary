@@ -16,7 +16,10 @@
             var count=0;
             var lettercount=0;
 
-           
+            var distX;
+            var distY;
+            var posX;
+            var posY;
             function click_translate() {
                 var result = document.getElementById("result").value;
                 window.open("https://dict.naver.com/search.nhn?dicQuery="+result+"&query="+result+"&target=dic&ie=utf8&query_utf=&isOnlyViewEE=");
@@ -30,15 +33,12 @@
             }
             
             function drag(ev) {
-              
+               
                 ev.dataTransfer.setData("text", ev.target.id);
-                console.log(Number(target.id));
-                mypic =  ev.target.id;
-                mypic.addEventListener("dragstart",startDrag,false);
-                leftbox = document.getElementById('textbox');
-                leftbox.addEventListener("drop",dropped,false);
+             
             }
             function startDrag(e){
+                
                 var code = e.dataTransfer.getData('text');
                 e.dataTransfer.setData('Text',code);
             }
@@ -56,13 +56,13 @@
                 numbers[2] = 0;
                 count =0;
             }
-                button = document.getElementById('button_translate');
-                $(document).ready(function(){
-                    $('button').click(function(){
-                        var input = document.getElementById("result").value;
-                            window.open("https://dict.naver.com/search.nhn?dicQuery="+input+"&query="+input+"&target=dic&ie=utf8&query_utf=&isOnlyViewEE=");
-                    });
+            button = document.getElementById('button_translate');
+            $(document).ready(function(){
+                $('button').click(function(){
+                    var input = document.getElementById("result").value;
+                        window.open("https://dict.naver.com/search.nhn?dicQuery="+input+"&query="+input+"&target=dic&ie=utf8&query_utf=&isOnlyViewEE=");
                 });
+            });
             
             function drop(ev) {
                 //ev.preventDefault();
@@ -75,7 +75,6 @@
                 .css('margin-top', posY + distY + 'px');
                 console.log(posX, posY, distX, distY);
                 */
-                
                 var data = ev.dataTransfer.getData("text");
                 ev.target.append(document.getElementById(data));
                 
@@ -84,7 +83,7 @@
                 count ++;
         
             }
-           
+            
             </script>
     <body>
     <div id = "wrapper">
@@ -97,11 +96,11 @@
 
             <div id = "carousel" style="clear:both">
                     <div class="slide">
-                        <img id="0" draggable="true" ondragstart="drag(event)" src = "{% static '1_0.png' %}">
+                        <img id="0" draggable="true" ondragstart="drag(event)"  src = "{% static '1_0.png' %}">
                     </div>
     
                     <div class="slide">
-                        <img id="2" draggable="true" ondragstart="drag(event)" src = "{% static '1_2.png' %}">
+                        <img id="2" draggable="true" ondragstart="drag(event)"  src = "{% static '1_2.png' %}">
                     </div>
     
                     <div class="slide">
@@ -154,7 +153,7 @@
     
                 </div>
 
-           
+
             <div class="center" style="width:100%; ">
                 <div class="container" style="width:70%; height:300px;">
                     <div class="textbox" ondrop="drop(event)" ondragover="allowDrop(event)" style = "border:1px solid; width:100%; height:100%">
@@ -199,11 +198,11 @@
                 
                 <div id = "carousel2" style="clear:both; height:300px;">
                         <div class="slide">
-                            <img id="100" draggable="true" ondragstart="drag(event)" src = "{% static '2_0.png' %}">
+                            <img id="100" draggable="true" ondragstart="drag(event)"  src = "{% static '2_0.png' %}">
                         </div>
         
                         <div class="slide">
-                            <img id="101" draggable="true" ondragstart="drag(event)" src = "{% static '2_1.png' %}">
+                            <img id="101" draggable="true" ondragstart="drag(event)"  src = "{% static '2_1.png' %}">
                         </div>
         
                         <div class="slide">
@@ -309,15 +308,14 @@
                 </div>
             </div>
             
-            <input type = "image" id="button_transform" onclick="click_transform();" src = "{% static 'transform.png' %}" class = "transform-button" />
-        
+
+
+            <div class="ttsform" style="float:left; width:70%">
             <form action="{% url 'home' %}" method="GET">
                     {% csrf_token %}
             <div class="translate">
                 <div class = "t_area">
                     <textarea type="text" name="tts_content" value="{{tts_content}}" id="result" cols="45" rows="2" style="float:left" > </textarea>
-                    <input type = "image" id="button_transform" onclick="click_transform();" src = "{% static 'transform.png' %}" class = "transform-button" />
-
                 </div>
                 <div class = "mybtn">                
                     <input type = "button" id="button_translate" onclick="click_translate();"  class = "btn btn-secondary" value="Translate"/>
@@ -325,6 +323,12 @@
                 </div>
             </div>
             </form>
+            </div>
+
+            <div class="transbutton" style="float:left;">
+                <input type = "image" id="button_transform" onclick="click_transform();" src = "{% static 'transform.png' %}" class = "transform-button" />
+            </div>
+
             <audio controls>
                 <source src="{% static 'gtts2.mp3' %}" type="audio/mp3">
             </audio>
@@ -366,6 +370,10 @@
 
 .textbox{
     display: table;
+}
+
+.transbutton{
+    padding-top:5px;
 }
 
 .translate{
