@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <title> Dougy's HTML5 HTML5 Drag N Drop</title>
+    <meta charset="utf-8"/>
+    <style>
+        #leftbox{
+    float:left;
+    width:250px;
+    height:300px;
+    margin:5px;
+    border:3px solid blue;
+}
+
+#rightbox{
+    float:left;
+    width:250px;
+    height:300px;
+    margin:5px;
+    border:3px solid red;
+}
+
+    </style>
+    <script>
+         function doFirst(){
+            mypic = document.getElementById('deco');
+            mypic.addEventListener("dragstart",startDrag,false);
+            leftbox = document.getElementById('leftbox');
+            leftbox.addEventListener("dragenter",function(e){e.preventDefault();},false);
+            leftbox.addEventListener("dragover",function(e){e.preventDefault();},false);
+            leftbox.addEventListener("drop",dropped,false);
+        }
+        function startDrag(e){
+            var code = '<img id="deco" src="{% static '1.jpg' %}" width="200">';
+            e.dataTransfer.setData('Text',code);
+        }
+        function dropped(e){
+            e.preventDefault();
+            leftbox.innerHTML = e.dataTransfer.getData('Text');
+        }
+        window.addEventListener("load",doFirst,false);
+    </script>
+</head>
+<body>
+    <section id="leftbox">
+        Drag an image in me!
+    </section>
+    <section id="rightbox">
+        <img id="deco" src="{% static '1.jpg' %}" width="200">
+    </section>
+</body>
+</html>
